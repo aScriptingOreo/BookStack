@@ -20,7 +20,7 @@ services:
 ## Download Client
   deluge:
     image: lscr.io/linuxserver/deluge:latest
-    container_name: deluge
+    container_name: bookstack_deluge
     environment:
       - PUID=1000
       - PGID=1000
@@ -31,8 +31,8 @@ services:
       - ${DOWNLOAD_DIR}:/downloads
     ports:
       - ${DELUGE_PORT}:8112
-      - 6881:6881
-      - 6881:6881/udp
+      - 6882:6881
+      - 6882:6881/udp
 
 ## Calibre (Book Database)
   calibre:
