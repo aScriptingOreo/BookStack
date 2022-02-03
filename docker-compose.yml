@@ -46,6 +46,7 @@ services:
       - CLI_ARGS= #optional
     volumes:
       - ${CALIBRE_CFG}:/config
+      - ${BOOK_DIR}:/books
     ports:
       - ${CALIBRE_PORT1}:8080
       - ${CALIBRE_PORT2}:8081
@@ -63,7 +64,7 @@ services:
       - DOCKER_MODS=linuxserver/calibre-web:calibre #optional
       - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
     volumes:
-      - ${CALIBRE_CFG}:/config
+      - ${CALIBRE_WEB_CFG}:/config
       - ${BOOK_DIR}:/books
     ports:
       - ${CALIBRE_WEB_PORT}:8083
