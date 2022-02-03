@@ -3,7 +3,7 @@ services:
 
 ## Book Manager/Requester
   readarr:
-    image: lscr.io/linuxserver/readarr
+    image: lscr.io/linuxserver/readarr:nightly
     container_name: readarr
     environment:
       - PUID=1000
@@ -19,7 +19,7 @@ services:
 
 ## Download Client
   deluge:
-    image: lscr.io/linuxserver/deluge
+    image: lscr.io/linuxserver/deluge:latest
     container_name: deluge
     environment:
       - PUID=1000
@@ -36,7 +36,7 @@ services:
 
 ## Bookstack (Client Reader)
   bookstack:
-    image: lscr.io/linuxserver/bookstack
+    image: lscr.io/linuxserver/bookstack:latest
     container_name: bookstack
     environment:
       - PUID=1000
