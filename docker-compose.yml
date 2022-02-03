@@ -18,21 +18,22 @@ services:
     restart: unless-stopped
 
 ## Download Client
-  deluge:
-    image: lscr.io/linuxserver/deluge:latest
-    container_name: bookstack_deluge
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent
+    container_name: qbittorrent
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
-      - DELUGE_LOGLEVEL=error #optional
+      - WEBUI_PORT=8080
     volumes:
-      - ${DELUGE_CFG}:/config
+      - ${QBIT_CFG}:/config
       - ${DOWNLOAD_DIR}:/downloads
     ports:
-      - ${DELUGE_PORT}:8112
       - 6882:6881
       - 6882:6881/udp
+      - ${QBIT_PORT}:8080
+    restart: unless-stopped
 
 ## Calibre (Book Database)
   calibre:
