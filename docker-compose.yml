@@ -46,7 +46,7 @@ services:
       - CLI_ARGS= #optional
     volumes:
       - ${CALIBRE_CFG}:/config
-      - ${BOOK_DIR}:/books
+      - "${BOOK_DIR}:/config/Calibre Library"
     ports:
       - ${CALIBRE_PORT1}:8080
       - ${CALIBRE_PORT2}:8081
